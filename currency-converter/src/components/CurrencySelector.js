@@ -16,8 +16,17 @@ function CurrencySelector() {
   }
 
   function handleChangeAmount(event) {
+    const min = 0;
+    const max = 10000000;
     const value = event.target.value;
-    return value >= 0 ? setAmount(Number(value)) : "";
+
+    if (value < min) {
+      return "";
+    } else if (value > max) {
+      setAmount(Number(max));
+    } else {
+      setAmount(Number(value));
+    }
   }
 
   function switchCurrencies() {
