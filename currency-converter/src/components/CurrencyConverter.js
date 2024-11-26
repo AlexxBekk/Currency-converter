@@ -1,15 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import CurrencyContext from "../context/CurrencyContext";
 import styles from "../styles/CurrencyConverter.module.css";
 
 function CurrencyConverter() {
   const { amount, baseCurrency, targetCurrency, exchangeRates } =
     useContext(CurrencyContext);
-  const [convertedAmount, setConvertedAmount] = useState(0);
+
+  const rate = exchangeRates[baseCurrency]?.[targetCurrency] ?? 0;
+  const convertedAmount = rate * amount;
 
   useEffect(() => {
-    const rate = exchangeRates[baseCurrency]?.[targetCurrency] || 1;
-    setConvertedAmount(() => rate * amount);
+    console.log(
+      `Значения изменились.\nТекущие значения:\nAmount: ${amount}\nBase Currency: ${baseCurrency}\nTarget Currency: ${targetCurrency}\n `,
+    );
   }, [amount, baseCurrency, targetCurrency]);
 
   return (

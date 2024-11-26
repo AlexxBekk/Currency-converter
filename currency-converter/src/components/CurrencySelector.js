@@ -16,7 +16,8 @@ function CurrencySelector() {
   }
 
   function handleChangeAmount(event) {
-    setAmount(Number(event.target.value));
+    const value = event.target.value;
+    return value >= 0 ? setAmount(Number(value)) : "";
   }
 
   function switchCurrencies() {
@@ -28,7 +29,7 @@ function CurrencySelector() {
     <div className={styles.wrapper}>
       <div className={styles.wrapper}>
         <input
-          type="number"
+          type="text"
           name="amount"
           onChange={handleChangeAmount}
           value={amount}

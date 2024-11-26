@@ -10,7 +10,7 @@ export function CurrencyContextProvider({ children }) {
 
   const [baseCurrency, setBaseCurrency] = useState("USD");
   const [targetCurrency, setTargetCurrency] = useState("RUB");
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(0);
 
   return (
     <CurrencyContext.Provider
