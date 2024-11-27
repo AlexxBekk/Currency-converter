@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.arrowIcon {
+  content: url("../icons/arrow.svg");
+  width: 36px;
+}

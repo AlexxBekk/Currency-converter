@@ -1,0 +1,34 @@
+:root {
+  --color-positive: #36E271;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: 200ms ease;
+}
+
+.container {
+  max-width: 40%;
+  margin: 0 auto;
+}
