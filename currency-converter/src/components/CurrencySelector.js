@@ -16,17 +16,7 @@ function CurrencySelector() {
   }
 
   function handleChangeAmount(event) {
-    const min = 0;
-    const max = 10000000;
-    const value = event.target.value;
-
-    if (value < min) {
-      return "";
-    } else if (value > max) {
-      setAmount(Number(max));
-    } else {
-      setAmount(Number(value));
-    }
+    setAmount(Number(event.target.value));
   }
 
   function switchCurrencies() {
@@ -39,6 +29,7 @@ function CurrencySelector() {
       <div className={styles.wrapper}>
         <input
           type="text"
+          maxLength="10"
           name="amount"
           onChange={handleChangeAmount}
           value={amount}
